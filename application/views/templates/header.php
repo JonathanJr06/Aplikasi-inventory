@@ -1,3 +1,12 @@
+<?php
+// Cek apakah variabel sesi 'status' TIDAK ADA, atau jika ada isinya BUKAN 'login'
+if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
+    // Jika kondisi terpenuhi, berarti user belum login, kembalikan ke halaman login
+    header('Location: ../index.php');
+    exit(); 
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
